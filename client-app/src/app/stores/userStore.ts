@@ -26,6 +26,7 @@ export default class UserStore {
       this.rootStore.modalStore.closeModal();
       history.push('/activities');
     } catch (error) {
+      // console.log(error);
       throw error;
     }
   };
@@ -37,7 +38,8 @@ export default class UserStore {
       this.rootStore.commonStore.setToken(user.token);
       this.rootStore.modalStore.closeModal();
       history.push('/activities');
-    } catch (error) {
+    } catch (error) {      
+      // console.log(error);
       throw error;
     }
   };

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Form as FinalForm, Field } from 'react-final-form'
 import { TextInput } from '../../app/common/form/TextInput';
-import { Form, Button, Label, Header } from 'semantic-ui-react';
+import { Form, Button, Header } from 'semantic-ui-react';
 import { RootStoreContext } from '../../app/stores/rootStore';
 import { IUserFormValues } from '../../app/models/user';
 import { FORM_ERROR } from 'final-form';
@@ -27,7 +27,7 @@ const RegisterForm = () => {
                     [FORM_ERROR]: error
                 }))
             }
-            //validate={validate}
+            validate={validate}
             render={({
                 handleSubmit,
                 submitting,
@@ -56,10 +56,6 @@ const RegisterForm = () => {
                             component={TextInput}
                             placeholder='Email' />
                         <Field
-                            name='email'
-                            component={TextInput}
-                            placeholder='Email' />
-                        <Field
                             name='password'
                             component={TextInput}
                             placeholder='Password'
@@ -67,7 +63,6 @@ const RegisterForm = () => {
                         {submitError && !dirtySinceLastSubmit && (
                             <ErrorMessage
                                 error={submitError}
-                                text={JSON.stringify(submitError.data.error)}
                             />
                         )}
                         <Button

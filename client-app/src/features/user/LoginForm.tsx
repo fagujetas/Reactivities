@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Form as FinalForm, Field } from 'react-final-form'
 import { TextInput } from '../../app/common/form/TextInput';
-import { Form, Button, Label, Header } from 'semantic-ui-react';
+import { Form, Button, Header } from 'semantic-ui-react';
 import { RootStoreContext } from '../../app/stores/rootStore';
 import { IUserFormValues } from '../../app/models/user';
 import { FORM_ERROR } from 'final-form';
@@ -31,7 +31,7 @@ const LoginForm = () => {
                 invalid,
                 pristine,
                 dirtySinceLastSubmit
-            }) => (
+            }) => 
                     <Form onSubmit={handleSubmit} error>
                         <Header
                             as='h2'
@@ -62,7 +62,7 @@ const LoginForm = () => {
                             fluid
                         />
                     </Form>
-                )}
+                }
         />
     );
 }
