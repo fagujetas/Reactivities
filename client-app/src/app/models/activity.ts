@@ -1,5 +1,3 @@
-import { Interface } from "readline";
-
 export interface IActivity
 {
     id: string;
@@ -51,5 +49,6 @@ export interface IAttendee {
     username: string;
     displayName: string;
     image: string;
-    isHost: boolean
+    isHost: boolean;
+    following?: boolean;
 }
